@@ -18,8 +18,17 @@ body{
     color:#111;
     overflow-x:hidden;
     line-height:1.6;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
 }
 
+img,
+video{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
 /* =========================
    COLORS
 ========================= */
@@ -33,12 +42,7 @@ body{
     --shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
-/* =========================
-   LOADER
-========================= */
-/* =========================
-   LOADER
-========================= */
+
 /* STACKLY EXPERIENCE LOADER */
 
 .loader{
@@ -329,12 +333,12 @@ body{
 ========================= */
 
 .section{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:30px;
 }
 
 .section-title h2{
@@ -344,6 +348,18 @@ body{
 
 .section-title p{
     color:var(--gray);
+}
+
+@media(max-width:768px){
+
+    .section{
+        padding:50px 20px;
+    }
+
+    .section-title{
+        margin-bottom:30px;
+    }
+
 }
 
 /* =========================
@@ -356,10 +372,14 @@ body{
     overflow:hidden;
     padding:20px 0;
 }
+.marquee-wrapper{
+    width:100%;
+    overflow:hidden;
+}
 
 .marquee{
     display:flex;
-    gap:80px;
+    gap:40px;
     white-space:nowrap;
     animation:marquee 15s linear infinite;
 }
@@ -378,6 +398,17 @@ body{
     }
 }
 
+@media(max-width:768px){
+
+    .marquee{
+        gap:20px;
+    }
+
+    .marquee span{
+        font-size:18px;
+    }
+
+}
 /* =========================
    COLLECTIONS
 ========================= */
@@ -473,13 +504,15 @@ body{
     opacity:0;
     transition:all 1.5s ease;
 }
-
 .fade-left{
-    transform:translateX(-150px);
+    opacity:0;
+    transform:translateX(-40px);
+    
 }
 
 .fade-right{
-    transform:translateX(150px);
+    opacity:0;
+    transform:translateX(40px);
 }
 
 .fade-left.show,
@@ -1179,6 +1212,27 @@ footer{
         height:auto;
         visibility:visible !important;
         opacity:1 !important;
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    *{
+        max-width:100%;
+    }
+
+    .about,
+    .story,
+    .collection-grid,
+    .product-grid,
+    .why-grid,
+    .instagram-grid,
+    .testimonial-container,
+    .footer-container{
+        width:100%;
+        overflow:hidden;
     }
 
 }
